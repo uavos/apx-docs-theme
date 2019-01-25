@@ -1,0 +1,13 @@
+title: SectionHW
+docs:
+- pages:
+  - nodes/nav
+  - nodes/mhx
+  - nodes/gps
+  - nodes/cas
+  - nodes/ifc
+  - nodes/gimbal
+  - nodes/servo
+  - nodes/ghanta
+  - nodes/swcm
+  - nodes/xhawk

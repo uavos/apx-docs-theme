@@ -1,0 +1,40 @@
+{% assign section = page.id | split: "/" | shift | first %}
+{% assign sdata = site.data[section] %}
+{% if sdata.docs %}
+
+<div class="{{ include.class }}">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    {% for h in sdata.docs %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.index}}" aria-expanded="false" aria-controls="collapse-{{forloop.index}}">
+              {{ h.title }}
+            </a>
+          </h4>
+        </div>
+        <div id="collapse-{{forloop.index}}" class="panel-collapse collapse" role="tabpanel" aria-label="Side Navigation">
+          <div class="list-group">
+            {% if sdata.doc %}
+              {% assign shome = sdata.doc %}
+            {% else %}
+              {% assign shome = "index" %}
+            {% endif %}
+
+            {% assign sdocs = shome | concat: h.pages %}
+            {% for item in sdocs %}
+
+              {% assign sid = section | prepend:"/" | append:"/" | append:item %}
+              {% assign doc = site.docs | where:"id", sid | first %}
+
+              <a class="list-group-item {% if doc.id == page.id %}active{% endif %}" href="{{ doc.url  | prepend: site.baseurl }}">
+                {{ doc.title }}
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

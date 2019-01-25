@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="container">
+    <div class="row">
+
+        {% include pages_nav.html class="col-md-3" %}
+
+        <div class="col-md-9">
+            <h1>{{ page.title }}</h1>
+            {% if page.toc %}
+              <div class="panel panel-info">
+                <div class="panel-heading">On this page</div>
+                <div class="panel-body">
+                  {% include toc.html html=content sanitize=true class="inline_toc" id="my_toc" h_min=2 h_max=3 %}
+                </div>
+              </div>
+            {% endif %}
+            <div id="markdown-content-container">
+              {{ content }}
+            </div>
+            <!-- div style="clear:both;">
+              <p class="text-center">
+                <br />
+                <a target="_blank" href="{{site.git_edit_address}}/{{ page.path }}" class="btn btn-default githubEditButton" role="button">
+                  <i class="fa fa-pencil fa-lg"></i> Improve this page
+                </a>
+              </p>
+            </div -->
+            <hr>
+            {% include section_nav.html %}
+        </div>
+
+    </div>
+</div>

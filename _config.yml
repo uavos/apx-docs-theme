@@ -1,0 +1,47 @@
+# Site settings
+title: APX Theme
+email: sa@uavos.com
+description: >
+  APX Theme by UAVOS Inc.
+lang: en-US
+
+baseurl: "/apx-docs-theme" # the subpath of your site, e.g. /blog/
+url: https://uavos.github.io/apx-docs-theme # the base hostname & protocol for your site
+# git_address: https://github.com/uavos/apx-docs-theme
+
+# theme options from https://bootswatch.com/
+# comment out this to use default Bootstrap
+#bootwatch: paper
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-relative-links
+
+relative_links:
+  enabled:     true
+  collections: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+defaults:
+- scope:
+    path: "_docs"
+  values:
+    layout: docs
+    seo:
+     type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:path:output_ext
+    output: true

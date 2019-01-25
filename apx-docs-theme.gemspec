@@ -2,7 +2,8 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apx-docs-theme"
-  spec.version       = "0.1.0"
+  # spec.version       = "0.1.0"
+  spec.version       = File.read(File.expand_path("VERSION", __FILE__)).strip
   spec.authors       = ["Aliaksei Stratsilatau"]
   spec.email         = ["sa@uavos.com"]
 

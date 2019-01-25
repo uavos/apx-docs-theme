@@ -2,7 +2,7 @@
 
 THEME_NAME := apx-docs-theme
 
-GIT_VERSION = $(shell git describe --tags --match="v*.*" 2> /dev/null |sed 's/^v//;s/\-/\./;s/\(.*\)-\(.*\)/\1/')
+GIT_VERSION := $(shell git describe --tags --match="v*.*" 2> /dev/null |sed 's/^v//;s/\-/\./;s/\(.*\)-\(.*\)/\1/')
 
 GEM = $(THEME_NAME)-$(GIT_VERSION).gem
 
@@ -20,7 +20,7 @@ gem-push: gem FORCE
 	gem push $(GEM)
 
 
-%-$(GIT_VERSION).gem:
+%-$(GIT_VERSION).gem: VERSION
 	gem build $*.gemspec
 
 

@@ -6,7 +6,8 @@ GIT_VERSION = $(shell git describe --tags --match="v*.*" 2> /dev/null |sed 's/^v
 
 GEM = $(THEME_NAME)-$(GIT_VERSION).gem
 
-release: git-push gem
+release: git-push
+	@make gem
 	gem push $(GEM)
 
 
@@ -26,5 +27,5 @@ git-push: FORCE
 .PHONY: FORCE
 
 VERSION: FORCE
-	@echo "Current version: $(GIT_VERSION)"
+	@echo "Current version: $(call GIT_VERSION)"
 	@echo $(GIT_VERSION) > $@

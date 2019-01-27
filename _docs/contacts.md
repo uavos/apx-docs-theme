@@ -16,5 +16,5 @@ Announcements about updates: [UAVOS Updates](https://groups.google.com/forum/#!f
 Aliaksei Stratsilatau <sa@uavos.com>
 ```
 
-* <i class="fa fa-linkedin"></i> [LinkedIn](https://linkedin.com/in/uavinda)
-* <i class="fa fa-github"></i> [GitHub](https://github.com/uavos)
+* <i class="fab fa-linkedin"></i> [LinkedIn](https://linkedin.com/in/uavinda)
+* <i class="fab fa-github"></i> [GitHub](https://github.com/uavos)

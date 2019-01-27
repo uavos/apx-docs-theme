@@ -2,12 +2,13 @@
 layout: default
 ---
 
-<div class="container">
-    <div class="row">
+<div class="container pt-4">
+  <div class="row">
 
-        {% include pages_nav.html class="col-md-3" %}
+        {% include sidebar.html class="col-md-4" %}
 
-        <div class="col-md-9">
+        <div class="col-md-8 markdown-body">
+
             <h1>{{ page.title }}</h1>
             {% if page.toc %}
               <div class="panel panel-info">
@@ -17,20 +18,9 @@ layout: default
                 </div>
               </div>
             {% endif %}
-            <div id="markdown-content-container">
-              {{ content }}
-            </div>
-            <!-- div style="clear:both;">
-              <p class="text-center">
-                <br />
-                <a target="_blank" href="{{site.git_edit_address}}/{{ page.path }}" class="btn btn-default githubEditButton" role="button">
-                  <i class="fa fa-pencil fa-lg"></i> Improve this page
-                </a>
-              </p>
-            </div -->
-            <hr>
-            {% include section_nav.html %}
-        </div>
+            {{ content }}
 
-    </div>
+          </div>
+
+  </div>
 </div>

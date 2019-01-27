@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html class="h-100" ="{{ page.lang | default: site.lang | default: "en" }}">
 
 {% include head.html %}
 
-<body>
+<body class="d-flex flex-column h-100">
+  <header>
+    {% include navbar.html %}
+  </header>
 
-    {% include topnav.html %}
+  <main role="main" class="flex-shrink-0">
+  {{ content }}
+  </main>
 
-    <div class="page-content">
-        <div class="wrapper">
-            {{ content }}
-        </div>
-    </div>
+  {% include footer.html %}
 
-    {% include footer.html %}
-    {% include js_files.html %}
+  {% include js_files.html %}
 </body>
 
 </html>

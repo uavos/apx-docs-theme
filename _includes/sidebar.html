@@ -1,0 +1,30 @@
+{% assign section = page.id | split: "/" | shift | first %}
+{% assign sdata = site.data[section] %}
+{% if sdata.docs %}
+
+<div class="{{ include.class }} pb-4">
+  <div class="list-group shadow mr-4">
+  {% for h in sdata.docs %}
+    <li class="list-group-item list-group-item-primary font-weight-bold">
+      {{ sdata.title }}
+    </li>
+    {% if sdata.doc %}
+      {% assign shome = sdata.doc %}
+    {% else %}
+      {% assign shome = "index" %}
+    {% endif %}
+
+    {% assign sdocs = shome | concat: h.pages %}
+    {% for item in sdocs %}
+
+      {% assign sid = section | prepend:"/" | append:"/" | append:item %}
+      {% assign doc = site.docs | where:"id", sid | first %}
+
+      <a class="list-group-item list-group-item-action bs-callout bs-callout-blue {% if doc.id == page.id %}active{% endif %}" href="{{ doc.url  | prepend: site.baseurl }}">
+        {{ doc.title }}
+      </a>
+    {% endfor %}
+  {% endfor %}
+  </div>
+</div>
+{% endif %}

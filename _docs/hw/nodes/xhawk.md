@@ -77,10 +77,13 @@ Connect shortcut `BOOT0-F4` to `+3.3V` and connect USB cable from PC to the
 board.
 
 Type in linux console:
-```dmesg|tail```
+
+```bash
+dmesg|tail
+```
 the output should look like this:
 
-```
+```bash
 [43896.790821] usb 1-5: new full-speed USB device number 9 using xhci_hcd
 [43896.919746] usb 1-5: New USB device found, idVendor=0483, idProduct=df11
 [43896.919749] usb 1-5: New USB device strings: Mfr=1, Product=2, SerialNumber=3
@@ -96,24 +99,26 @@ Note, the firmware is compatible with both 'FMUv2' and 'FMUv3 (CUBE)' boards.
 
 You may need to install **dfu-util** package and **binutils-arm-none-eabi**
 package for arm-none-eabi-objcopy (to convert hex file to bin).
-```
+
+```bash
 sudo apt-get install dfu-util binutils-arm-none-eabi
 ```
 
 Now prepare the file for dfu-util tool (convert hex to bin):
-```
-arm-none-eabi-objcopy -I ihex
-/usr/share/uavos/firmware/armv7-m/FMU2/loader-xhawk.hex -O binary
-/tmp/loader-xhawk.bin
+
+```bash
+arm-none-eabi-objcopy -I ihex /usr/share/uavos/firmware/armv7-m/FMU2/loader-xhawk.hex -O binary /tmp/loader-xhawk.bin
 ```
 
 Now flash the loader to the stm32f4 chip:
-```
+
+```bash
 sudo dfu-util -d 0483:df11 -a 0 -s 0x08000000 -D /tmp/loader-xhawk.bin
 ```
 
 The output:
-```
+
+```bash
 dfu-util 0.8
 
 Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
@@ -156,18 +161,21 @@ cable. Start the **gcu**, connect the USB cable. The GCU should find the node
 
 Now, connect PC-USB-UART stick to the PC, make sure you know the assigned
 /dev/ttyUSB port name. The dmesg|tail output should contain:
-```
+
+```bash
 [46245.137723] usb 1-5: cp210x converter now attached to ttyUSB0
 ```
 
 Provide power to the board either through the USB connector or `PWR` wire (f.ex.
 from USB-UART stick), and flash the loader:
-```
+
+```bash
 spark -s -d /dev/ttyUSB0 /usr/share/uavos/firmware/armv7-m/FMU2/loader-x4io.hex
 ```
 
 The output should look like this:
-```
+
+```bash
 UAVOS Autopilot firmware loader v9.8-79-g2556d8c
 Copyright (c) 2011 Aliaksei Stratsilatau <sa@uavos.com>
 Visit http://wiki.uavos.com/ for more info.

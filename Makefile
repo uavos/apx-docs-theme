@@ -23,6 +23,8 @@ gem-push: gem FORCE
 %-$(GIT_VERSION).gem: VERSION
 	gem build $*.gemspec
 
+view: FORCE
+	bundle exec jekyll serve
 
 
 .PHONY: FORCE

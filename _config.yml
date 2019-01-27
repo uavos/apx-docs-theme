@@ -12,6 +12,8 @@ url: https://uavos.github.io/apx-docs-theme # the base hostname & protocol for y
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
 #bootwatch: paper
+sass:
+  style: compressed
 
 # Build settings
 markdown: kramdown
@@ -21,16 +23,23 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-relative-links
+  - jekyll-tidy
 
 relative_links:
   enabled:     true
   collections: true
+
+jekyll_tidy:
+  # exclude: ["index.html"]
+  # ignore_env: development
+  # compress_html: true  # or false
 
 exclude:
   - Gemfile
   - Gemfile.lock
   - .idea/
   - .gitignore
+
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 defaults:

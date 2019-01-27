@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<div class="header-container jumbotron">
+<div class="jumbotron">
     <div class="container">
         <h1>APX Autopilot</h1>
         <p>by UAVOS Inc.</p>
@@ -17,13 +17,13 @@ layout: default
             <p class="lead">{{ site.docs | where: 'label','about' | map: 'content' | first | markdownify }}</p>
         </div>
         <div class="col-md-7 text-center">
-            <img src="img/about-apx.png" alt="" class="img-responsive">
+            <img src="img/about-apx.png" alt="" class="img-fluid">
         </div>
     </div>
     <hr>
     <div class="row">
         <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-cube" aria-hidden="true"></i></h1>
+            <h1 class="text-center"><i class="fab fa-medapps" aria-hidden="true"></i></h1>
             <h3 class="text-center">Sophisticated features</h3>
             <p>{{ site.docs | where: 'label','features' | map: 'content' | first | markdownify }}</p>
         </div>
@@ -33,7 +33,7 @@ layout: default
             <p>{{ site.docs | where: 'label','scalability' | map: 'content' | first | markdownify }}</p>
         </div>
         <div class="col-sm-4">
-            <h1 class="text-center"><i class="fa fa-github" aria-hidden="true"></i></h1>
+            <h1 class="text-center"><i class="fab fa-github" aria-hidden="true"></i></h1>
             <h3 class="text-center">Customization</h3>
             <p>{{ site.docs | where: 'label','customization' | map: 'content' | first | markdownify }}</p>
         </div>

@@ -1,5 +1,29 @@
-title: SectionFW
 docs:
 - pages:
-  - conf
   - vm
+  - conf/virtual-machine
+  - conf/canaerospace
+  - conf/sensors-redundancy
+  - conf/antenna-tracking-system
+  - conf/gimbal
+  - conf/servo-bldc-drive
+  - conf/intertial-measurement-unit
+  - conf/blackbox-onboard-recorder
+  - conf/pitot-heater
+  - conf/ports-multiplexer
+  - conf/altimeter
+  - conf/mhx-node-functions
+  - conf/servo-regulator
+  - conf/analog-inputs
+  - conf/ahrs
+  - conf/airspeed
+  - conf/onewire
+  - conf/auxilary-can
+  - conf/gps-receiver
+  - conf/encoder-interface
+  - conf/canopen
+  - conf/downlink
+  - conf/radio
+  - conf/serial-ports
+  - conf/serial-protocols
+title: Integration

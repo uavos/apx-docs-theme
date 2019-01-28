@@ -1,5 +1,6 @@
 ---
-title: Navigation Computer (nav)
+title: Navigation Computer
+badge: nav
 ---
 
 The main board is the heart of the system. It integrates an Inertial Measurement Unit (IMU) and navigation processor.

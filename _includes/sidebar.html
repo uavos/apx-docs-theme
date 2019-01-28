@@ -19,6 +19,9 @@
 
       <a class="list-group-item list-group-item-action bs-callout bs-callout-blue{% if doc.id == page.id %} active{% endif %} {% if forloop.first %} list-group-item-primary font-weight-bold{% endif %}" href="{{ doc.url  | prepend: site.baseurl }}">
         {{ doc.title }}
+        {% if doc.badge %}
+        <span class="badge badge-light float-right">{{ doc.badge }}</span>
+        {% endif %}
       </a>
     {% endfor %}
   {% endfor %}

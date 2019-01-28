@@ -5,9 +5,6 @@
 <div class="{{ include.class }} pb-4">
   <div class="list-group shadow mr-4">
   {% for h in sdata.docs %}
-    <li class="list-group-item list-group-item-primary font-weight-bold">
-      {{ sdata.title }}
-    </li>
     {% if sdata.doc %}
       {% assign shome = sdata.doc %}
     {% else %}
@@ -20,7 +17,7 @@
       {% assign sid = section | prepend:"/" | append:"/" | append:item %}
       {% assign doc = site.docs | where:"id", sid | first %}
 
-      <a class="list-group-item list-group-item-action bs-callout bs-callout-blue {% if doc.id == page.id %}active{% endif %}" href="{{ doc.url  | prepend: site.baseurl }}">
+      <a class="list-group-item list-group-item-action bs-callout bs-callout-blue{% if doc.id == page.id %} active{% endif %} {% if forloop.first %} list-group-item-primary font-weight-bold{% endif %}" href="{{ doc.url  | prepend: site.baseurl }}">
         {{ doc.title }}
       </a>
     {% endfor %}

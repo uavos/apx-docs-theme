@@ -1,6 +1,10 @@
 ---
+conf: Analog inputs
 title: Analog inputs
 ---
+
+>Configuration: `Analog inputs`
+> | Nodes: [`cas`](../../hw/nodes/cas.md) [`ifc`](../../hw/nodes/ifc.md) [`jsw`](../../hw/nodes/jsw.md) [`nav`](../../hw/nodes/nav.md)
 
 This feature measures analog voltages (**up to 30V**) and updates the Mandala variables with configured `rate`.
 

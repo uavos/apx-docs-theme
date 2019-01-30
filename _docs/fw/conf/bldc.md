@@ -1,11 +1,14 @@
 ---
-title: Servo BLDC drive
+conf: Regulator/FOC
+title: BLDC motor control
 ---
 
-### `bldc/Regulator/FOC`
-### `bldc`
+>Configuration: `Regulator/FOC`
+> | Nodes: [`servo`](../../hw/nodes/servo.md)
 
 The driver is able to control Brushless motors with [FOC algorithm](https://en.wikipedia.org/wiki/Vector_control_(motor)).
+
+The outer control loops are managed by the [Motor control module](servo.md).
 
 BLDC options (**FOC**):
 

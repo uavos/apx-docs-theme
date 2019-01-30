@@ -1,5 +1,5 @@
 ---
-title: APX theme overview
+title: APX system overview
 #permalink: /hw/
 #redirect_from: /hw/index.html
 ---

@@ -1,6 +1,10 @@
 ---
-title: OneWire
+conf: Ports/OneWire
+title: OneWire interface
 ---
+
+>Configuration: `Ports/OneWire`
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md)
 
 This feature have ability to collect data from 1-wire sensors (temperature).
 

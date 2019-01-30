@@ -1,8 +1,10 @@
 ---
+conf: ATS
 title: Antenna Tracking System
 ---
 
-### `ATS`
+>Configuration: `ATS`
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md)
 
 This feature controls servo motors to point directional antenna to currently selected UAV. this driver works together with [Datalink](#datalink) protocol to track selected vehicle and its coordinates.
 

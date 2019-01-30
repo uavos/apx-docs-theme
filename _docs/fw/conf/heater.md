@@ -1,8 +1,10 @@
 ---
+conf: Heater
 title: Pitot heater
 ---
 
-### `Heater`
+>Configuration: `Heater`
+> | Nodes: [`cas`](../../hw/nodes/cas.md)
 
 This feature provides control of pitot probe heating.
 

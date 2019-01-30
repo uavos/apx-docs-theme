@@ -1,5 +1,8 @@
 ---
-title: Open Hardware Evaluation (xhawk)
+badge: xhawk
+order: 1000
+title: Open Hardware Evaluation
+toc: true
 ---
 
 The AP system firmware could be used to evaluate it on the Open Hardware
@@ -203,3 +206,26 @@ board to the PC with the `USB` connector.
 Start the GCU software, it should find at least the node **xhawk**. Update
 firmware through the menu. The node **x4io** should appear in GCU. Update the
 firmware through GCU menu for **x4io** node also.
+
+#### System features
+
+- Industrial [CAN](https://en.wikipedia.org/wiki/CAN_bus) interface
+- Extended temperature range -40..+80°C
+- 4.5V...30V input power supply
+- Power supply reverse-polarity protection (self-recoverable)
+
+## Capabilities
+
+- [Airspeed sensor](../../fw/conf/airspeed.md)
+- [Altimeter](../../fw/conf/altimeter.md)
+- [Autopilot controls](../../fw/conf/shiva.md)
+- [Auxilary CAN](../../fw/conf/can2.md)
+- [Downlink](../../fw/conf/downlink.md)
+- [GPS Receiver](../../fw/conf/gps.md)
+- [Inertial Measurement Unit](../../fw/conf/imu.md)
+- [Inertial Navigation](../../fw/conf/ahrs.md)
+- [Ports and controls](../../fw/conf/ports.md)
+- [Serial Ports](../../fw/conf/serial.md)
+- [Serial Protocols](../../fw/conf/protocols.md)
+- [USB Interface](../../fw/conf/usb.md)
+- [Virtual Machine](../../fw/conf/vm.md)

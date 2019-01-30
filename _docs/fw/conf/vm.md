@@ -1,7 +1,11 @@
 ---
+conf: Virtual Machine
 title: Virtual Machine
 toc: true
 ---
+
+>Configuration: `Virtual Machine`
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md) [`jsw`](../../hw/nodes/jsw.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
 This feature provides scripting engine, capable of execution of user programs or protocols on node MCU in user space. The VM is available in all major AP nodes.
 
@@ -13,13 +17,13 @@ The VM is based on [pawn scripting engine](http://www.compuphase.com/pawn/pawn.h
 
 
 
-Some script examples could be found here: `/usr/share/uavos/gcu/scripts`
+Some script examples could be found here: `Documents/UAVOS/Scripts`
 
 ### Exported functions
 
 The default include file with all exported functions is located here:
 
-`/usr/share/uavos/gcu/scripts/include/default.inc`
+ * Linux: `/usr/share/uavos/gcu/scripts/include/default.inc`
 
 The standard float arithmetic and string manipulation modules are imported by default as well.
 
@@ -30,12 +34,12 @@ The additional (implementation specific) functions are listed below.
 
 These functions are called by the VM on predefined events and the user script can redefine these functions to implement specific functionality.
 
-#### `main()`
+`main()`
 
 This function is optional and is called when VM starts. The common use of this function is to register serial port event handlers via `seriel_listen(portID,"@function")`.
 
 ----
-#### `@OnTask()`
+`@OnTask()`
 
 This event function is called every 0-10 ms, when the CPU is idle. The return value >0 indicated scheduled time period for the next call, i.e. **return 100;** will call this function again after 100ms.
 
@@ -45,67 +49,67 @@ This event function is called every 0-10 ms, when the CPU is idle. The return va
 
 These functions can be called from within user script.
 
-#### `time()`
+`time()`
 
 Returns current system time in ms.
 
 ----
-#### `time_utc()`
+`time_utc()`
 
 Returns current GPS time in sec.
 
 ----
-#### `wait(const ms)`
+`wait(const ms)`
 
 Suspend VM for specified time [ms].
 
 ----
-#### `Float:get_var(const varmsk)`
+`Float:get_var(const varmsk)`
 
 Return value of Mandala variable. **varmsk** - is the variable index. All indexes are predefined with constants, starting with **f_...**, i.e. f_altitude, f_pitch, f_home_hmsl, etc.
 
 ----
-#### `set_var(const varmsk, const Float:value, const bool:force_send=false)`
+`set_var(const varmsk, const Float:value, const bool:force_send=false)`
 
 Set the value of Mandala variable. When **force_send** is true, the variable update will be announced over network and synchronized with other AP nodes. **varmsk** - is the variable index.
 
 ----
-#### `serial_listen(const portID, const publicFunc[])`
+`serial_listen(const portID, const publicFunc[])`
 
 This function binds a virtual port with **portID** to the event handler (public function). The function must start with '@' and have parameter **cnt** - number of bytes available for read.
 
 ----
-#### `bool: serial_write(const portID, const src{}, cnt, serialmode:mode=NODE)`
+`bool: serial_write(const portID, const src{}, cnt, serialmode:mode=NODE)`
 
 Send data to serial port. The port id number is **portID**. **src{}** is the data to send (packed array). **mode** is either NODE (physical port is within same node), LAN (port reachable via network), GCU (data forwarded to GCU). Returns true if written successfully.
 
 ----
-#### `serial_byte(index)`
+`serial_byte(index)`
 
 Return one byte from serial port read buffer at **index**. This function should only be called from event handler, registered with **serial_listen(...)**.
 
 ----
-#### `serial_string(dest{}, size=sizeof dest)`
+`serial_string(dest{}, size=sizeof dest)`
 
 Copy string from serial port buffer to **dest** string. Appends terminating \0 byte to **dest**. **size** is the maximum allowed destination buffer size. Useful for text-based protocols parsing. This function should only be called from event handler, registered with **serial_listen(...)**.
 
 ----
-#### `Float:get_gpio(const index)`
+`Float:get_gpio(const index)`
 
 Read and return gpio value of local node (Ports driver), with the specified **index** (0..n).
 
 ----
-#### `set_gpio(const index, const Float:value)`
+`set_gpio(const index, const Float:value)`
 
 Set the gpio **value** of local node (Ports driver), with the specified **index** (0..n).
 
 ----
-#### `set_control(const index, const Float:value)`
+`set_control(const index, const Float:value)`
 
 Set the control **value** of local node (Ports driver), with the specified **index** (0..n).
 
 ----
-#### `get_ch(const index)`
+`get_ch(const index)`
 
 Return value of controls channel with the specified **index** (0..n), after all mixers are applied.
 

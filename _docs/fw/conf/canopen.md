@@ -1,6 +1,10 @@
 ---
+conf: CANopen
 title: CANopen
 ---
+
+>Configuration: `CANopen`
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`servo`](../../hw/nodes/servo.md) [`nav`](../../hw/nodes/nav.md)
 
 This feature provides support for [CANopen](https://en.wikipedia.org/wiki/CANopen) protocol.
 

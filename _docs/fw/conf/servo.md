@@ -1,9 +1,10 @@
 ---
-title: Servo regulator
+conf: <servo nodes>
+title: Motor control
 ---
 
-### `servo`
-### `bldc`
+>Configuration: `<servo nodes>`
+> | Nodes: [`servo`](../../hw/nodes/servo.md)
 
 The regulator parameters could be adjusted to tune servo motor behavuir. This driver recieves encoder postion and speed from [Encoder interface](#encoder-interface), commanded position or speed from [Ports/controls](#ports-and-controls) module, and calculates required motor power control value.
 
@@ -23,8 +24,7 @@ Available generic servo parameters:
     - *FOC* - Vector controlled BLDC
 
 ## Regulator parameters
-### `servo/Regulator`
-### `bldc/Regulator`
+> `servo/Regulator`
 
 - **regtype**   - the type of regulator. This setting is applied on **reboot**.
     - *PPI*     - the P+PI regulator to control position, which is received from `Ports/controls` channel. The Kpp sets the commanded speed depending on position error, and Kp-Ki controls the motor power to maintain the speed.
@@ -47,7 +47,9 @@ Available generic servo parameters:
     - *Li*      - the limit of allowed output power bias
     - *Lo*      - the output power limit
 
-### `servo/Safety`
+
+### Safety parameters
+> `servo/Safety`
 
 The following parameters are used to shut down the motor power in some situations.
 

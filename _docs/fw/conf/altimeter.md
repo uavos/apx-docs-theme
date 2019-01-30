@@ -1,6 +1,10 @@
 ---
+conf: Altimeter
 title: Altimeter
 ---
+
+>Configuration: `Altimeter`
+> | Nodes: [`cas`](../../hw/nodes/cas.md) [`xhawk`](../../hw/nodes/xhawk.md) [`nav`](../../hw/nodes/nav.md) [`ers`](../../hw/nodes/ers.md)
 
 Static pressure sensor estimates altitude from pressure readings.
 

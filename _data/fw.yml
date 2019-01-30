@@ -1,29 +1,33 @@
 docs:
 - pages:
-  - vm
-  - conf/virtual-machine
-  - conf/canaerospace
-  - conf/sensors-redundancy
-  - conf/antenna-tracking-system
-  - conf/gimbal
-  - conf/servo-bldc-drive
-  - conf/intertial-measurement-unit
-  - conf/blackbox-onboard-recorder
-  - conf/pitot-heater
-  - conf/ports-multiplexer
-  - conf/altimeter
-  - conf/mhx-node-functions
-  - conf/servo-regulator
-  - conf/analog-inputs
-  - conf/ahrs
   - conf/airspeed
-  - conf/onewire
-  - conf/auxilary-can
-  - conf/gps-receiver
-  - conf/encoder-interface
+  - conf/altimeter
+  - conf/ain
+  - conf/ats
+  - conf/shiva
+  - conf/can2
+  - conf/bldc
+  - conf/canas
   - conf/canopen
   - conf/downlink
+  - conf/encoder
+  - conf/gps
+  - conf/gimbal
+  - conf/imu
+  - conf/ahrs
+  - conf/mhx
+  - conf/servo
+  - conf/blackbox
+  - conf/onewire
+  - conf/heater
+  - conf/mux
+  - conf/ports
+  - conf/imon
   - conf/radio
-  - conf/serial-ports
-  - conf/serial-protocols
+  - conf/rtc
+  - conf/imu-redundancy
+  - conf/serial
+  - conf/protocols
+  - conf/usb
+  - conf/vm
 title: Integration

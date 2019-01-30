@@ -1,5 +1,7 @@
 ---
-title: GPS Sensor (gps)
+badge: gps
+order: 50
+title: GPS Sensor
 ---
 
 The board uses the latest concurrent reception of GPS/QZSS, GLONASS, BeiDou MAX-M8 module and a passive built-in antenna.
@@ -14,5 +16,20 @@ Includes additional Nine-Axis (Gyro + Accelerometer + Compass) inertial sensors.
 
 ![GPS](img/gps-pcb.png)
 
+#### System features
 
-{% include_relative standard_features.md %}
+- Industrial [CAN](https://en.wikipedia.org/wiki/CAN_bus) interface
+- Extended temperature range -40..+80°C
+- 4.5V...30V input power supply
+- Power supply reverse-polarity protection (self-recoverable)
+
+## Capabilities
+
+- [GPS Receiver](../../fw/conf/gps.md)
+- [Inertial Measurement Unit](../../fw/conf/imu.md)
+
+## PCB Pinouts
+
+- [gps-AP10](pinouts/gps-AP10.pdf)
+- [gps-AP9](pinouts/gps-AP9.pdf)
+- [gps-AP9R1](pinouts/gps-AP9R1.pdf)

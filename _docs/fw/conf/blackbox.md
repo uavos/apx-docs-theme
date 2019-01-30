@@ -1,8 +1,10 @@
 ---
-title: Blackbox onboard recorder
+conf: Blackbox
+title: Onboard data recorder
 ---
 
-### `Blackbox`
+>Configuration: `Blackbox`
+> | Nodes: [`nav`](../../hw/nodes/nav.md)
 
 This section configures the onboard flight data recorder. Once enabled, it records telemetry stream to internal non-volatile memory. Data download capability is also provided through high-speed interface from nodes configuration menu and service commands.
 

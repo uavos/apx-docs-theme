@@ -1,10 +1,13 @@
 ---
+conf: Protocols
 title: Serial Protocols
+toc: true
 ---
 
-### `Protocols`
+>Configuration: `Protocols`
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
-This feature provides drivers for different serial data protocols. Any serial protocol can be linked to [Virtual Communication Port](#serial-ports) through **portID** setting.
+This feature provides drivers for different serial data protocols. Any serial protocol can be linked to [Virtual Communication Port](serial.md) through **portID** setting.
 
 The common options for the protocol are:
 
@@ -12,12 +15,13 @@ The common options for the protocol are:
     - *off*       - protocol is turned off
     - *node*      - protocol can send data only within one device (node)
     - *LAN*       - protocol can send data through CAN network to Serial Ports on other nodes
-- **ID**        - link protocol to specific [Virtual Communication Port](#serial-ports)
+- **ID**        - link protocol to specific [Virtual Communication Port](serial.md)
 
 Some protocols and settings are described in details below.
 
 
-### NMEA
+
+## NMEA
 
 This protocol is able to receive and send ASCII text messages of the following format:
 
@@ -49,8 +53,7 @@ Examples of valid NMEA requests:
 - `$enable,gps_pos\n` - will schedule GPS coordinates for continuous output every 100ms.
 - `$disable, $enable,cam_theta $enable,gps_pos\n` - will disable all previously scheduled outputs and select gimbal attitude and GPS coordinates for output every 100ms.
 
-
-### MODBUS
+## MODBUS
 
 This protocol is for requesting and receiving of [MODBUS packets](https://en.wikipedia.org/wiki/Modbus). It is used for reading of different sensors via RS485 bus.
 
@@ -64,8 +67,7 @@ The following parameters of MODBUS protocol are configurable:
 - **mult** - the read value is multiplied to this number and set to mandala variable, 0 = don't multiply
 - **bias** - this number is added to the value after multiplying and result is written to mandala variable
 
-
-### VISCA
+## VISCA
 
 This protocol is output only and controls some options of [Sony-FCB cameras](https://en.wikipedia.org/wiki/VISCA_Protocol) via UART.
 
@@ -77,8 +79,7 @@ The following features are supported:
 - **display**   - display overlay `*cam_opt_DSP*`
 - **focus**     - infinite focus mode by `*cam_opt_FM*`
 
-
-### DST
+## DST
 
 This protocol controls [DST Gimbals](http://www.dst.se/) (OTUS).
 
@@ -114,15 +115,13 @@ The following settings are available for the protocol:
 - **osd**       - enable on screen dispay (DST native), useful when you do video stabilization and post-processing and don't need anything on the video except clean picture
 - **overlay**   - text string to print on the video for reference
 
-
-### VOLZ
+## VOLZ
 
 This protocol is output only and controls [Volz servos](http://www.volz-servos.com/) via RS485.
 
 The protocol sends a packet with commanded servo position every 5 ms. All servos must be pre-configured and channels should be assigned. The protocol will continuously update all servos with values from [Ports mixer](#ports) and the total number of servos is set in **cnt** setting. It is recommended to assign channels in sequence, without gaps, to minimize traffic.
 
-
-### HBC
+## HBC
 
 This protocol controls [MGM-COMPRO industrial BLDC controllers](http://www.mgm-compro.com) (via CAN). Up to four motors could be controlled. Parking feature is also provided. The connected controllers are auto detected and monitored.
 
@@ -135,18 +134,15 @@ The following settings are available:
 - **pval**      - value to apply for motor (power) to move shaft for parking, the motor will be stopped when variable binded in **psens** is not zero
 - **pwait**     - pause [sec] to wait after `*ctr_throttle*` value is zero before starting the parking procedure
 
-
-### SBUS
+## SBUS
 
 This protocol controls [Futaba SBUS servos](http://www.futabarc.com/servos/sbus.html) (via RS485). The servos must be pre-configured and channels should be assigned. The protocol will update servo positions, taken from [Ports mixer](#ports) output channels. The SBUS packet is sent every 12 ms.
 
-
-### XPDR
+## XPDR
 
 This protocol controls [Microair T2000UAV transponders](http://www.microair.com.au/). The transponder is auto detected and monitored, turned on and off (power controlled) according to `*power_xpdr*` mandala value. The absolute baromeric altitude is updated form `*altps*` variable. The SQUAWK must be provided, according to the regulations, in **squawk** setiing.
 
-
-### JETCAT
+## JETCAT
 
 This protocol controls [JetCat turbojet engine](http://www.jetcatusa.com/). The engine is initialized and monitored, the start procedure is initiated by `*sw_starter*` variable and the rpm is controlled from `*ctr_throttle*`. The current status is reported in the console.
 
@@ -164,8 +160,7 @@ To start the turbine:
 
 To shutdown the turbine, turn `*power_ignition*` off.
 
-
-### LIGHTWARE
+## LIGHTWARE
 
 This protocol controls [LIGHTWARE SFxx laser altimeters](http://lightware.co.za/). The protocol sends requests in the form `?LD\r\n` and expects a response in either forms (altitude number in meters):
 
@@ -180,8 +175,7 @@ The following parameters are configurable:
     - **request** - protocol will send requests (10Hz)
     - **continuous** - protocol will NOT send requests, but reads altitude data
 
-
-### MAVLINK
+## MAVLINK
 
 This protocol reads data encoded in [MAVLINK](https://en.wikipedia.org/wiki/MAVLink) packets.
 

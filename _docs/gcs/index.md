@@ -1,5 +1,5 @@
 ---
-title: GCS theme
+title: Ground Control software
 toc: true
 ---
 

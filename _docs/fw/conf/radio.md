@@ -1,6 +1,10 @@
 ---
+conf: Radio
 title: Radio
 ---
+
+>Configuration: `Radio`
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md)
 
 The driver configures the radio module [Microhard](http://microhardcorp.com) mhx P400/P900/n920x 900MHz spread spectrum. The common *PMP* (Point-To-Multipoint) network consist of one or mode modems, configured as a *Slave*, and the **only one** modem, configured as *Master*.
 

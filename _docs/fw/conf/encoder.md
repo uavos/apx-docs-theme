@@ -1,8 +1,10 @@
 ---
+conf: Encoder
 title: Encoder interface
 ---
 
-### `Encoder`
+>Configuration: `Encoder`
+> | Nodes: [`servo`](../../hw/nodes/servo.md)
 
 This interface reads data from different encoders. Encoder measures position, calculates speed (derivative) and provides filtered values to [Servo Regulator](#servo-regulator). The output position value is normalized from -1 to +1.
 

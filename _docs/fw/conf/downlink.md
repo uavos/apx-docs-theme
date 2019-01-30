@@ -1,14 +1,18 @@
 ---
+conf: Downlink
 title: Downlink
 ---
 
-This is higher-level communication protocol, used to operate multiple vehicles with one or many ground control units. It is usually used on [mhx](/hw/nodes/mhx.md) nodes, and works together with [Radio module](#radio) and [ATS](#antenna-tracking-system)
+>Configuration: `Downlink`
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`jsw`](../../hw/nodes/jsw.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md)
+
+This is higher-level communication protocol, used to operate multiple vehicles with one or many ground control units. It is usually used on [mhx](../nodes/mhx.md) nodes, and works together with [Radio module](radio.md) and [ATS](ats.md)
 
 The protocol is connected to available WAN interface (radio, USB) and wraps all telemetry and uplink data to address the vehicles this data belongs to.
 
 When the vehicle is 'selected', the GCU is requesting the downlink stream (once a second), and when the driver accepts these requests (`SQUAWK` matches), it sends the data stream, otherwise, when there's no requests for stream, the driver sends just *transponder data* (XPDR), with only basic information about the vehicle.
 
-The XPDR data structure can be found here `/usr/share/uavos/gcu/sdk/inc/node.h` and contains  the following parameters:
+The XPDR data structure can be found in SDK file `node.h` and contains  the following parameters:
 
 - *squawk* - 16 bit unique ID of the vehicle
 - *lat* - vehicle current latitude [deg]

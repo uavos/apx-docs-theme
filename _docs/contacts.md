@@ -1,8 +1,5 @@
 ---
 title: Contacts
-section: contacts
-#permalink: /contacts
-#redirect_from: /contacts/index.html
 ---
 
 The company's website and products inquiries: [uavos.com](http://uavos.com)

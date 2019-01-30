@@ -1,10 +1,7 @@
 ---
-badge: ghanta
-order: 100
-title: USB-CAN Interface
+badge: ers
+title: ERS node
 ---
-
-This USB stick provides interface of AP CAN bus to the host PC.
 
 #### System features
 
@@ -15,18 +12,10 @@ This USB stick provides interface of AP CAN bus to the host PC.
 
 ## Capabilities
 
-- [Autopilot controls](../../fw/conf/shiva.md)
+- [Altimeter](../../fw/conf/altimeter.md)
 - [Auxilary CAN](../../fw/conf/can2.md)
-- [Downlink](../../fw/conf/downlink.md)
-- [Inertial Navigation](../../fw/conf/ahrs.md)
+- [CANaerospace](../../fw/conf/canas.md)
 - [Ports and controls](../../fw/conf/ports.md)
-- [Power monitor](../../fw/conf/imon.md)
 - [Serial Ports](../../fw/conf/serial.md)
 - [Serial Protocols](../../fw/conf/protocols.md)
-- [USB Interface](../../fw/conf/usb.md)
 - [Virtual Machine](../../fw/conf/vm.md)
-
-## PCB Pinouts
-
-- [ghanta-AP9](pinouts/ghanta-AP9.pdf)
-- [ghanta-RUS](pinouts/ghanta-RUS.pdf)

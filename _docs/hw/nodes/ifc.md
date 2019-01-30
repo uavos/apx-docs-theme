@@ -1,5 +1,7 @@
 ---
-title: Interfaces Controller (ifc)
+badge: ifc
+order: 30
+title: Interfaces Controller
 ---
 
 This is optional component and it can be used to extend AP system with additional interfaces.
@@ -9,9 +11,12 @@ input and output of different digital and analog signals. This board also contai
 
 The built-in analog multiplexer is used to map logical signal to any of twelve physical ports of the board.
 
+Some modifications of this node have power switches to control power lines, and also may include isolated RS232-485-422 and CAN interfaces.
+
+
 ![IFC](img/ifc-pcb.png)
 
-## IFC Features
+## Node Features
 
 - 12x general purpose input/output ports connected to the multiplexer
     - 8 analog inputs (4x high voltage)
@@ -23,4 +28,32 @@ The built-in analog multiplexer is used to map logical signal to any of twelve p
 - Independent switched power output with integrated Step-Down converter (0.5A, +5V).
 - Independent switched power output with integrated Step-Down converter (0.5A, +3.3V).
 
-{% include_relative standard_features.md %}
+#### System features
+
+- Industrial [CAN](https://en.wikipedia.org/wiki/CAN_bus) interface
+- Extended temperature range -40..+80°C
+- 4.5V...30V input power supply
+- Power supply reverse-polarity protection (self-recoverable)
+
+## Capabilities
+
+- [Analog inputs](../../fw/conf/ain.md)
+- [Autopilot controls](../../fw/conf/shiva.md)
+- [Auxilary CAN](../../fw/conf/can2.md)
+- [CANopen](../../fw/conf/canopen.md)
+- [Inertial Measurement Unit](../../fw/conf/imu.md)
+- [Inertial Navigation](../../fw/conf/ahrs.md)
+- [OneWire interface](../../fw/conf/onewire.md)
+- [Ports Multiplexer](../../fw/conf/mux.md)
+- [Ports and controls](../../fw/conf/ports.md)
+- [Power monitor](../../fw/conf/imon.md)
+- [Serial Ports](../../fw/conf/serial.md)
+- [Serial Protocols](../../fw/conf/protocols.md)
+- [USB Interface](../../fw/conf/usb.md)
+- [Virtual Machine](../../fw/conf/vm.md)
+
+## PCB Pinouts
+
+- [ifc-AP10](pinouts/ifc-AP10.pdf)
+- [ifc-AP9](pinouts/ifc-AP9.pdf)
+- [ifc-AP9R1](pinouts/ifc-AP9R1.pdf)

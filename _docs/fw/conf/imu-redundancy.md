@@ -1,8 +1,10 @@
 ---
+conf: IMU/Sensors
 title: Sensors redundancy
 ---
 
-### `Sensors`
+>Configuration: `IMU/Sensors`
+> | Nodes: [`nav`](../../hw/nodes/nav.md)
 
 This section configures the fusion priorities of different sensors of the same kind,
 installed in one node. For example, if the board have two different gyro sensors,

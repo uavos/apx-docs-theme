@@ -1,6 +1,10 @@
 ---
+conf: Gimbal
 title: Gimbal
 ---
+
+>Configuration: `Gimbal`
+> | Nodes: [`nav`](../../hw/nodes/nav.md)
 
 This subsystem controls generic gimbal and performs its gyro-stabilization.
 
@@ -12,7 +16,7 @@ As controls input, gimbal accepts the following mandala variables (depending on 
 - `*camcmd_roll*`, `*camcmd_pitch*`, `*camcmd_yaw*` - angles [deg] or speeds [deg/s]
 - `*turretcmd_pitch*`, `*turretcmd_yaw*` - angles [deg]
 
-### The available settings
+### Available settings
 
 - **ctype**             - gimbal control type, i.e. how gimbal reacts to input controls
     - *position*      - will hold is angular position relative to the main frame

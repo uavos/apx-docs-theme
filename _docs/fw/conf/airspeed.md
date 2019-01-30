@@ -1,6 +1,10 @@
 ---
-title: Airspeed
+conf: Airspeed
+title: Airspeed sensor
 ---
+
+>Configuration: `Airspeed`
+> | Nodes: [`cas`](../../hw/nodes/cas.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
 Dynamic pressure sensor estimates airspeed from pressure readings.
 

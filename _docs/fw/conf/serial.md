@@ -1,6 +1,10 @@
 ---
+conf: Ports/<port name>
 title: Serial Ports
 ---
+
+>Configuration: `Ports/<port name>`
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
 This feature provides physical serial ports mapping to Virtual Comm Ports (VCP). All VCP ports are accessible by [Serial Protocols](#serial-protocols) through unique `portID` number.
 

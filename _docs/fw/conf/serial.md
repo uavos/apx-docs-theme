@@ -4,7 +4,7 @@ title: Serial Ports
 ---
 
 >Configuration: `Ports/<port name>`
-> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md)
 
 This feature provides physical serial ports mapping to Virtual Comm Ports (VCP). All VCP ports are accessible by [Serial Protocols](protocols.md) through unique `portID` number.
 

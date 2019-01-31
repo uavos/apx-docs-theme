@@ -4,7 +4,7 @@ title: CANaerospace
 ---
 
 >Configuration: `CANaerospace`
-> | Nodes: [`servo`](../../hw/nodes/servo.md) [`cas`](../../hw/nodes/cas.md) [`ers`](../../hw/nodes/ers.md)
+> | Nodes: [`ers`](../../hw/nodes/ers.md) [`servo`](../../hw/nodes/servo.md) [`cas`](../../hw/nodes/cas.md)
 
 This feature provides support for [CANaerospace](https://en.wikipedia.org/wiki/CANaerospace) protocol.
 

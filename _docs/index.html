@@ -1,4 +1,5 @@
 ---
+title: Technical Documentation
 layout: default
 ---
 
@@ -13,7 +14,7 @@ layout: default
 <div class="container">
     <div class="row">
         <div class="col-md-5 lead">
-            <h2 class="header-light regular-pad">Theme</h2>
+            <h2 class="header-light regular-pad">{{ page.title }}</h2>
             <p class="lead">{{ site.docs | where: 'label','about' | map: 'content' | first | markdownify }}</p>
         </div>
         <div class="col-md-7 text-center">

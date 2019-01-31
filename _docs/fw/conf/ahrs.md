@@ -4,7 +4,7 @@ title: Inertial Navigation
 ---
 
 >Configuration: `AHRS`
-> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`xhawk`](../../hw/nodes/xhawk.md) [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
 
 This feature estimates different navigation parameters, based on sensor readings from other modules. The estimations are performed with MEKF algorithm, and the inertial navigation (in case of GPS lost) is based on airspeed sensor readings and current wind estimator values.
 

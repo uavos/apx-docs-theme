@@ -5,7 +5,7 @@ toc: true
 ---
 
 >Configuration: `Virtual Machine`
-> | Nodes: [`jsw`](../../hw/nodes/jsw.md) [`ifc`](../../hw/nodes/ifc.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`ghanta`](../../hw/nodes/ghanta.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`mhx`](../../hw/nodes/mhx.md) [`jsw`](../../hw/nodes/jsw.md)
 
 This feature provides scripting engine, capable of execution of user programs or protocols on node MCU in user space. The VM is available in all major AP nodes.
 

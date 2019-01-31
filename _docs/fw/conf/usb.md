@@ -4,7 +4,7 @@ title: USB Interface
 ---
 
 >Configuration: `NA`
-> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`mhx`](../../hw/nodes/mhx.md) [`ghanta`](../../hw/nodes/ghanta.md) [`jsw`](../../hw/nodes/jsw.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`xhawk`](../../hw/nodes/xhawk.md) [`ifc`](../../hw/nodes/ifc.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md) [`jsw`](../../hw/nodes/jsw.md)
 
 The USB interface could be used to connect `node` to PC.
 

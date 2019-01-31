@@ -4,7 +4,7 @@ title: CANopen
 ---
 
 >Configuration: `CANopen`
-> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`servo`](../../hw/nodes/servo.md) [`nav`](../../hw/nodes/nav.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`servo`](../../hw/nodes/servo.md)
 
 This feature provides support for [CANopen](https://en.wikipedia.org/wiki/CANopen) protocol.
 

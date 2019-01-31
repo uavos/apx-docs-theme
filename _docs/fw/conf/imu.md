@@ -4,7 +4,7 @@ title: Inertial Measurement Unit
 ---
 
 >Configuration: `IMU`
-> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`gps`](../../hw/nodes/gps.md)
+> | Nodes: [`xhawk`](../../hw/nodes/xhawk.md) [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`gps`](../../hw/nodes/gps.md)
 
 This feature provides data from inertial sensors, which then is used by autopilot's [AHRS sub-system](ahrs.md).
 

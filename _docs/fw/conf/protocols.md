@@ -5,7 +5,7 @@ toc: true
 ---
 
 >Configuration: `Protocols`
-> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md)
 
 This feature provides drivers for different serial data protocols. Any serial protocol can be linked to [Virtual Communication Port](serial.md) through **portID** setting.
 

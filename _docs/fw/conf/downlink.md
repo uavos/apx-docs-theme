@@ -4,7 +4,7 @@ title: Downlink
 ---
 
 >Configuration: `Downlink`
-> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ghanta`](../../hw/nodes/ghanta.md) [`jsw`](../../hw/nodes/jsw.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md) [`jsw`](../../hw/nodes/jsw.md)
 
 This is higher-level communication protocol, used to operate multiple vehicles with one or many ground control units. It is usually used on [mhx](../../hw/nodes/mhx.md) nodes, and works together with [Radio module](radio.md) and [ATS](ats.md)
 

@@ -4,7 +4,7 @@ title: Ports and controls
 ---
 
 >Configuration: `Ports`
-> | Nodes: [`jsw`](../../hw/nodes/jsw.md) [`ifc`](../../hw/nodes/ifc.md) [`servo`](../../hw/nodes/servo.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`servo`](../../hw/nodes/servo.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`mhx`](../../hw/nodes/mhx.md) [`ghanta`](../../hw/nodes/ghanta.md) [`jsw`](../../hw/nodes/jsw.md)
 
 This feature connects logical variables with physical signals on the vehicle.
 

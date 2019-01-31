@@ -11,7 +11,6 @@ $(function() {
 
         prefetch: 'assets/js/search.json',
         cache: false,
-        ttl: 1
     });
 
     $('#search-box').typeahead({

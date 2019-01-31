@@ -6,19 +6,19 @@ title: Motor control
 >Configuration: `<servo nodes>`
 > | Nodes: [`servo`](../../hw/nodes/servo.md)
 
-The regulator parameters could be adjusted to tune servo motor behavuir. This driver recieves encoder postion and speed from [Encoder interface](#encoder-interface), commanded position or speed from [Ports/controls](#ports-and-controls) module, and calculates required motor power control value.
+The regulator parameters could be adjusted to tune servo motor behavuir. This driver recieves encoder postion and speed from [Encoder interface](encoder.md), commanded position or speed from [Ports/controls](ports.md) module, and calculates required motor power control value.
 
 Available generic servo parameters:
 
 - **power** - motor power control:
     - *no* - the motor is completely shut down
-    - *yes* - the motor power is controlled by the variable `*power_servo*`
+    - *yes* - the motor power is controlled by the variable `power_servo`
 - **debug** - when turned on, the servo will output it's current state to the following variables:
-    - `*user1*` - current position
-    - `*user2*` - current output power
-    - `*user3*` - current speed
-    - `*user4*` - current position error
-    - `*user5*` - current control channel output from `Ports/controls`
+    - `user1` - current position
+    - `user2` - current output power
+    - `user3` - current speed
+    - `user4` - current position error
+    - `user5` - current control channel output from `Ports/controls`
 - **type** - motor type:
     - *brushed* - regular brushed motor
     - *FOC* - Vector controlled BLDC
@@ -35,7 +35,7 @@ Available generic servo parameters:
     - *speed*   - The first part of *PPI* regulator (*P*) is skipped, i.e. The output of `ports` channel is a commanded speed to *PI* regulator.
 - **pwm**       - the power controller PWM frequency, is set in timer units as period, i.e. the value of 8000 is about 20kHz, the common value is 5000.
 - **pwm_min**   - the minimum pulse with for motor in timer units. Must be less than `pwm`. When set to zero, the driver will automatically set this value to 10% of `pwm` period. Normally, this value should be tuned so that the motor is moving on minimum commanded power.
-- **hyst**      - the hysteresis applied to commanded speed inside *PPI* regulator, i.e. when the commanded speed is less than this value, the output power is down. The common value is 0.1-0.5, and it is tuned so that the motor is not responding on [encoder](#encoder-interface) noise.
+- **hyst**      - the hysteresis applied to commanded speed inside *PPI* regulator, i.e. when the commanded speed is less than this value, the output power is down. The common value is 0.1-0.5, and it is tuned so that the motor is not responding on [encoder](encoder.md) noise.
 - **dyn**       - the limit of commanded speed for the motor
 - **mrev**      - to reverse the sign of output motor power (the polarity of motor). The positive power should move the moter clockwise, the negative power - counter clockwise.
 - **reg**       - tuning parameters of the *PPI regulator*.

@@ -1,7 +1,17 @@
 ---
 badge: jsw
-title: JSW node
+order: 160
+title: HID controller
 ---
+
+This device is used to build Ground Control interface panels with joysticks, buttons, etc. It connects ground [modem](mhx.md) with human controls hardware (buttons, displays, joysticks, handles etc.) and can control UAV in case the main PC with [Ground Control](../../gcs) software is failed.
+
+## Node Features
+
+- Digital inputs/outputs for keyboards and buttons
+- Analog inputs
+- Quadrature encoder interfaces
+- Serial and USB ports
 
 #### System features
 

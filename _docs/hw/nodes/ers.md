@@ -1,7 +1,17 @@
 ---
 badge: ers
-title: ERS node
+order: 150
+title: Emergency Rescue System
 ---
+
+This device monitors emergency conditions and provides independent power to control parachute deployment.
+
+## Node Features
+
+- High-voltage charge-discharge circuit
+- Pyro element testing circuit
+- Power lines and networks data monitoring
+- External trigger connection for independent radio receiver
 
 #### System features
 

@@ -4,7 +4,7 @@ title: Ports and controls
 ---
 
 >Configuration: `Ports`
-> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`servo`](../../hw/nodes/servo.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md) [`jsw`](../../hw/nodes/jsw.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`jsw`](../../hw/nodes/jsw.md) [`ifc`](../../hw/nodes/ifc.md) [`servo`](../../hw/nodes/servo.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
 
 This feature connects logical variables with physical signals on the vehicle.
 
@@ -32,12 +32,12 @@ Each channel can output value from -100% to +100%. Thus, the ouput from mixer (s
 For example:
 
 - to adjust the neutral position for steering servo, you play with `zero` setting.
-- to bind `*ctr_throttle*` to a channel, you may use `mult`=2, `min`=`zero`=-90, `max`=80. The variable `*ctr_throttle*` have values from 0 (idle) to 1 (full). Since you have some mechanical limits (-90, 80), the `mult` should be adjusted to maintain the span of the binded variable, i.e. `mult`=2x(80-(-90))/200=1.7:
-    - when `*ctr_throttle*`=0, the servo position *out*=0x`mult`x100+`zero`=-90%=`min`
-    - when `*ctr_throttle*`=1, the servo position *out*=1x`mult`x100+`zero`=-90+170=80%=`max`
+- to bind `ctr_throttle` to a channel, you may use `mult`=2, `min`=`zero`=-90, `max`=80. The variable `ctr_throttle` have values from 0 (idle) to 1 (full). Since you have some mechanical limits (-90, 80), the `mult` should be adjusted to maintain the span of the binded variable, i.e. `mult`=2x(80-(-90))/200=1.7:
+    - when `ctr_throttle`=0, the servo position *out*=0x`mult`x100+`zero`=-90%=`min`
+    - when `ctr_throttle`=1, the servo position *out*=1x`mult`x100+`zero`=-90+170=80%=`max`
 - for flaperons you may setup two `bind`s to the same channel.
-    * `bind`=`*ctr_ailerons*`, `mult`=0.6, `ch`=1
-    * `bind`=`*ctr_flaps*`, `mult`=0.5, `speed`=0.5, `ch`=1
+    * `bind`=`ctr_ailerons`, `mult`=0.6, `ch`=1
+    * `bind`=`ctr_flaps`, `mult`=0.5, `speed`=0.5, `ch`=1
 
 The output channels can be controlled through [VirtualMachine](vm.md).
 

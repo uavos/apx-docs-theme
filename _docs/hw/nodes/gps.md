@@ -1,7 +1,7 @@
 ---
 badge: gps
 order: 50
-title: GPS Sensor
+title: GNSS Receiver
 ---
 
 The board uses the latest concurrent reception of GPS/QZSS, GLONASS, BeiDou MAX-M8 module and a passive built-in antenna.

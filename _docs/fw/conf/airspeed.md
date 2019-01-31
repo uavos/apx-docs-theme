@@ -4,14 +4,14 @@ title: Airspeed sensor
 ---
 
 >Configuration: `Airspeed`
-> | Nodes: [`cas`](../../hw/nodes/cas.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`xhawk`](../../hw/nodes/xhawk.md) [`cas`](../../hw/nodes/cas.md)
 
 Dynamic pressure sensor estimates airspeed from pressure readings.
 
 - **pt**        - this setting enables the driver
     - *off* - the pressure sensor is powered off and there's no data output
-    - *airspeed* - the sensor provides airspeed fixes for autopilot, the output is sent through variables `*airspeed*`.
-    - *buoyancy* - the sensor provides filtered pressure measurements and the data is sent to variable `*buoyancy*` [Pa]. this option is used mainly for Blimps.
+    - *airspeed* - the sensor provides airspeed fixes for autopilot, the output is sent through variables `airspeed`.
+    - *buoyancy* - the sensor provides filtered pressure measurements and the data is sent to variable `buoyancy` [Pa]. this option is used mainly for Blimps.
 - **prio**      - redundancy priority for sensor.
     - *primary*   - data will be used when available.
     - *secondary* - data will be used when *primary* is unavailable.

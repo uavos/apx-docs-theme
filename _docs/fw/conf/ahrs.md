@@ -4,7 +4,7 @@ title: Inertial Navigation
 ---
 
 >Configuration: `AHRS`
-> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
 This feature estimates different navigation parameters, based on sensor readings from other modules. The estimations are performed with MEKF algorithm, and the inertial navigation (in case of GPS lost) is based on airspeed sensor readings and current wind estimator values.
 
@@ -47,15 +47,15 @@ AHRS tuning:
     - *strong* - vibrations filter weight is 'strong'
     - *mekf* - gyro data for autopilot control loops is estimated by derivative calculation from *attitude* output from AHRS. Usefult when the gyro bias is critical, so that integrated gyro always reflects actual attitude.
     - *raw* - gyro data is not changed at all, no drift compensation. Used for technical maintenance purposes, vibration level checks, etc. Should not be used for normal operation.
-- **facc**      - accelerometers vibrations filter. This will affect `*slip*` estimations and input to MEKF filter:
+- **facc**      - accelerometers vibrations filter. This will affect `slip` estimations and input to MEKF filter:
     - *off* - accelerometers are not filtered at all
     - *soft* - vibrations filter weight is 'soft'
     - *strong* - vibrations filter weight is 'strong'
 - **ftype**     - MEKF tuning
     - *default* - the tested configuration, proven to operate.
     - *improved* - experimental tuning, improved performance, but not tested as *default* option.
-- **hAGL**      - altitude to turn on AGL [m]. The `*power_agl*` will turn on when the altitude reaches this number.
-- **bAGL**      - AGL altitude on ground level [m]. The ground level altitude `*agl*`, used on will be adjusted, using this zero level.
+- **hAGL**      - altitude to turn on AGL [m]. The `power_agl` will turn on when the altitude reaches this number.
+- **bAGL**      - AGL altitude on ground level [m]. The ground level altitude `agl`, used on will be adjusted, using this zero level.
 - **hGPS**      - preferred altitude source
     - *auto* - will use baro altitude everywhere, except final stages of Landing procedure
     - *baro* - will always use baro altitude when available
@@ -66,7 +66,7 @@ AHRS tuning:
 - **noGPS**     - don't wait GPS on initialization, used when there is no GPS receiver present at all.
 - **noMAG**     - block magnetometer
     - *off* - never use magnetometer data
-    - *auto* - turn off magnetometer according to value of mandala `*cmode_nomag*`. Used by helicopters landing procedure automatically or by operator to take-off from runways with magnetic disturbances.
+    - *auto* - turn off magnetometer according to value of mandala `cmode_nomag`. Used by helicopters landing procedure automatically or by operator to take-off from runways with magnetic disturbances.
     - *always* - always use magnetometer readings, never discard it
 - **fbar**      - barometric altimeter filter
     - *mekf* - fuse accelerations and actual movements to aid altitude estimations
@@ -80,4 +80,4 @@ AHRS tuning:
     - *Ps* - use only static pressure readings, discard dynamic
     - *Pt* - use only dynamic pressure readings, discard static
     - *off* - never use any pressure sensors for estimations
-- **hspd**      - minimum airspeed to use. the `*airspeed*` variable, used for control loops, will reflect the estimated velocities and wind speed, if ground speed is below this setting number. Used for helicopters with Pitot sensor.
+- **hspd**      - minimum airspeed to use. the `airspeed` variable, used for control loops, will reflect the estimated velocities and wind speed, if ground speed is below this setting number. Used for helicopters with Pitot sensor.

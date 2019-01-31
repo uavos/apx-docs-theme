@@ -5,7 +5,7 @@ toc: true
 ---
 
 >Configuration: `Protocols`
-> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ers`](../../hw/nodes/ers.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`ers`](../../hw/nodes/ers.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md)
 
 This feature provides drivers for different serial data protocols. Any serial protocol can be linked to [Virtual Communication Port](serial.md) through **portID** setting.
 
@@ -25,9 +25,9 @@ Some protocols and settings are described in details below.
 
 This protocol is able to receive and send ASCII text messages of the following format:
 
-$`variable name`,`value`*`CRC`
+$`variable name`,`value`,`*`,`CRC`
 
-- *variable name* - the name of Mandala variable, f.ex. `*altitude*`
+- *variable name* - the name of Mandala variable, f.ex. `altitude`
 - *value* - the variable value, i.e. *123.45678*, the value could be comma-separated (f.ex. for vector type values)
 - *CRC* - HEX checksum (8-bit, two characters) - sum of all bytes except starting `$` sign and ending `*` sign. If the checksum is omitted - it is not checked.
 
@@ -73,11 +73,11 @@ This protocol is output only and controls some options of [Sony-FCB cameras](htt
 
 The following features are supported:
 
-- **zoom**      - the zoom is controlled from `*cam_zoom*` mandala variable
-- **flip**      - the picture flip is controlled from `*cam_opt_PF*`
-- **NIR**       - night vision filter as per `*cam_opt_NIR*` value
-- **display**   - display overlay `*cam_opt_DSP*`
-- **focus**     - infinite focus mode by `*cam_opt_FM*`
+- **zoom**      - the zoom is controlled from `cam_zoom` mandala variable
+- **flip**      - the picture flip is controlled from `cam_opt_PF`
+- **NIR**       - night vision filter as per `cam_opt_NIR` value
+- **display**   - display overlay `cam_opt_DSP`
+- **focus**     - infinite focus mode by `cam_opt_FM`
 
 ## DST
 
@@ -87,19 +87,19 @@ The following features are supported:
 
 - The connected gimbal is auto detected and initialized
 - operation either in native DST stabilization mode or autopilot controlled stabilization
-- Day/Night camera is switched through `*cam_ch*` variable
+- Day/Night camera is switched through `cam_ch` variable
 - OSD overlay with custom message
-- Laser range finder initiated by `*cam_opt_laser*` and result value in `*range*` variables
-- picture flip is controlled from `*cam_opt_PF*`
-- night vision filter for day view camera as per `*cam_opt_NIR*` value
-- infinite focus mode by `*cam_opt_FM*`
-- focus value set from `*cam_focus*` variable
-- zoom is controlled from `*cam_zoom*` mandala variable
-- Computer Vision tracker is controlled in `cam_mode_track` mode (`*cam_mode*`)
+- Laser range finder initiated by `cam_opt_laser` and result value in `range` variables
+- picture flip is controlled from `cam_opt_PF`
+- night vision filter for day view camera as per `cam_opt_NIR` value
+- infinite focus mode by `cam_opt_FM`
+- focus value set from `cam_focus` variable
+- zoom is controlled from `cam_zoom` mandala variable
+- Computer Vision tracker is controlled in `cam_mode_track` mode (`cam_mode`)
 
-Supported modes, controlled through `*cam_mode*` variable:
+Supported modes, controlled through `cam_mode` variable:
 
-- `cam_mode_camoff`     - the gimbal is parked (stowed), this option is also automatically chosen when `*power_payload*` variable is off.
+- `cam_mode_camoff`     - the gimbal is parked (stowed), this option is also automatically chosen when `power_payload` variable is off.
 - `cam_mode_stab`       - gyro stabilization (joystick speed control)
 - `cam_mode_position`   - fixed angular position (encoder positioning)
 - `cam_mode_speed`      - same as `cam_mode_stab`
@@ -111,7 +111,7 @@ The following settings are available for the protocol:
 
 - **mode**      - gimbal stabilization control mode
     - *DST*             - native DST stabilization
-    - *siva*            - autopilot controlled, i.e. the gimbal works in **encoder positioning** mode and angles are controlled by autopilot through `*camctr_roll*`, `*camctr_pitch*`, `*camctr_yaw*` variables
+    - *siva*            - autopilot controlled, i.e. the gimbal works in **encoder positioning** mode and angles are controlled by autopilot through `camctr_roll`, `camctr_pitch`, `camctr_yaw` variables
 - **osd**       - enable on screen dispay (DST native), useful when you do video stabilization and post-processing and don't need anything on the video except clean picture
 - **overlay**   - text string to print on the video for reference
 
@@ -119,7 +119,7 @@ The following settings are available for the protocol:
 
 This protocol is output only and controls [Volz servos](http://www.volz-servos.com/) via RS485.
 
-The protocol sends a packet with commanded servo position every 5 ms. All servos must be pre-configured and channels should be assigned. The protocol will continuously update all servos with values from [Ports mixer](#ports) and the total number of servos is set in **cnt** setting. It is recommended to assign channels in sequence, without gaps, to minimize traffic.
+The protocol sends a packet with commanded servo position every 5 ms. All servos must be pre-configured and channels should be assigned. The protocol will continuously update all servos with values from [Ports mixer](ports.md) and the total number of servos is set in **cnt** setting. It is recommended to assign channels in sequence, without gaps, to minimize traffic.
 
 ## HBC
 
@@ -129,36 +129,36 @@ The following settings are available:
 
 - **motors**    - motors/controllers configuration
     - **canID**         - device CAN address
-    - **ch**            - channel to take value from [Ports mixer](#ports), moreover all motors are stopped when `*cmode_thrcut*` is on
+    - **ch**            - channel to take value from [Ports mixer](ports.md), moreover all motors are stopped when `cmode_thrcut` is on
     - **psens**         - parking sensor variable binding, i.e. when variable value is not zero - the shaft is 'parked', if there is no binding - parking procedure is skipped
 - **pval**      - value to apply for motor (power) to move shaft for parking, the motor will be stopped when variable binded in **psens** is not zero
-- **pwait**     - pause [sec] to wait after `*ctr_throttle*` value is zero before starting the parking procedure
+- **pwait**     - pause [sec] to wait after `ctr_throttle` value is zero before starting the parking procedure
 
 ## SBUS
 
-This protocol controls [Futaba SBUS servos](http://www.futabarc.com/servos/sbus.html) (via RS485). The servos must be pre-configured and channels should be assigned. The protocol will update servo positions, taken from [Ports mixer](#ports) output channels. The SBUS packet is sent every 12 ms.
+This protocol controls [Futaba SBUS servos](http://www.futabarc.com/servos/sbus.html) (via RS485). The servos must be pre-configured and channels should be assigned. The protocol will update servo positions, taken from [Ports mixer](ports.md) output channels. The SBUS packet is sent every 12 ms.
 
 ## XPDR
 
-This protocol controls [Microair T2000UAV transponders](http://www.microair.com.au/). The transponder is auto detected and monitored, turned on and off (power controlled) according to `*power_xpdr*` mandala value. The absolute baromeric altitude is updated form `*altps*` variable. The SQUAWK must be provided, according to the regulations, in **squawk** setiing.
+This protocol controls [Microair T2000UAV transponders](http://www.microair.com.au/). The transponder is auto detected and monitored, turned on and off (power controlled) according to `power_xpdr` mandala value. The absolute baromeric altitude is updated form `altps` variable. The SQUAWK must be provided, according to the regulations, in **squawk** setiing.
 
 ## JETCAT
 
-This protocol controls [JetCat turbojet engine](http://www.jetcatusa.com/). The engine is initialized and monitored, the start procedure is initiated by `*sw_starter*` variable and the rpm is controlled from `*ctr_throttle*`. The current status is reported in the console.
+This protocol controls [JetCat turbojet engine](http://www.jetcatusa.com/). The engine is initialized and monitored, the start procedure is initiated by `sw_starter` variable and the rpm is controlled from `ctr_throttle`. The current status is reported in the console.
 
 The following parameters are monitored:
 
-- `*rpm*`       - the turbine RPMx10
-- `*EGT*`       - exhaust gas temperature
-- `*Vm*`        - ECU and starter voltage
+- `rpm`       - the turbine RPMx10
+- `EGT`       - exhaust gas temperature
+- `Vm`        - ECU and starter voltage
 
 To start the turbine:
 
-- turn on ignition `*power_ignition*`=1
-- set throttle to zero `*ctr_throttle*`=0
-- send command to autopilot to initiate engine start-up procedure with `*ctrb_starter*`=1, this will automatically set `*sw_starter*` when ready.
+- turn on ignition `power_ignition`=1
+- set throttle to zero `ctr_throttle`=0
+- send command to autopilot to initiate engine start-up procedure with `ctrb_starter`=1, this will automatically set `sw_starter` when ready.
 
-To shutdown the turbine, turn `*power_ignition*` off.
+To shutdown the turbine, turn `power_ignition` off.
 
 ## LIGHTWARE
 

@@ -4,9 +4,9 @@ title: Inertial Measurement Unit
 ---
 
 >Configuration: `IMU`
-> | Nodes: [`gps`](../../hw/nodes/gps.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md) [`nav`](../../hw/nodes/nav.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`xhawk`](../../hw/nodes/xhawk.md) [`gps`](../../hw/nodes/gps.md)
 
-This feature provides data from inertial sensors, which then is used by autopilot's [AHRS sub-system](#ahrs).
+This feature provides data from inertial sensors, which then is used by autopilot's [AHRS sub-system](ahrs.md).
 
 The module usually includes the folowing sensors:
 
@@ -17,7 +17,7 @@ The module usually includes the folowing sensors:
 
 One or several IMU features can present in one system. The AHRS will automatically fuse all data. **Important** requirement is that all IMUs have to be properly aligned to each other with `align`, `flip` and `hdg` setting.
 
-The common practice is to use IMU of [GPS node](/hw/nodes/gps.md) to provide magnetometer, since it could be located in a better place (less hard-iron) than [NAV](/hw/nodes/nav.md).
+The common practice is to use IMU of [GPS node](../../hw/nodes/gps.md) to provide magnetometer, since it could be located in a better place (less hard-iron) than [NAV](../../hw/nodes/nav.md).
 
 ### Inertial Sensors
 
@@ -37,10 +37,10 @@ Inertial sensors tuning:
     - *secondary* - data will be used when *primary* is unavailable.
     - *low*       - level3 priority, used when *primary* and *secondary* is unavailable.
     - *safety*    - used when no other sources are available.
-- **RT**        - update and send Room Temperature data variable `*RT*`. Used for monitoring only.
+- **RT**        - update and send Room Temperature data variable `RT`. Used for monitoring only.
 - **flip**      - alignment of the sensors to bodyframe, "the side of device, which looks down". When set to *auto*, the orientation is always detected on start-up, which is not recommended for normal operation.
 - **hdg**       - the yaw component of the alignment.
-- **align**     - the corrections of the alignment of +/- 10 degrees. Higher numbers should never be used, also avoid the yaw component adjustments, because of gimbal-lock limitations. For yaw adjustments, use [AHRS/decl](#ahrs) setting.
+- **align**     - the corrections of the alignment of +/- 10 degrees. Higher numbers should never be used, also avoid the yaw component adjustments, because of gimbal-lock limitations. For yaw adjustments, use [AHRS/decl](ahrs.md) setting.
 - **bgyr**      - initial gyro bias compensation. MEMS gyroscopes usually have zero bias after the installation on PCB. This bias can be estimated by node command `Estimate gyro bias`. The estimated bias will then be reported to the console. Ususally, the numbers between +/- 5 deg/s are allowed, but on power-on, the AHRS does not have enough statistics to estimate gyro bias and may showincorrect attitude initially, although correcting itself after some physical body movements. To compensate this, the setting could be adjusted. After corrections, the command `Estimate gyro bias` should report numbers close to zero.
 - **DLPF**      - Digital Low-pass Filter, set the cut-off frequency [Hz] for inertial sensors, used for vibrations filter.
 

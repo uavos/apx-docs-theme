@@ -4,7 +4,7 @@ title: Autopilot controls
 ---
 
 >Configuration: `.shiva`
-> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ifc`](../../hw/nodes/ifc.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md) [`nav`](../../hw/nodes/nav.md)
+> | Nodes: [`ifc`](../../hw/nodes/ifc.md) [`nav`](../../hw/nodes/nav.md) [`ghanta`](../../hw/nodes/ghanta.md) [`mhx`](../../hw/nodes/mhx.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
 Autopilot capability. Processes PIDs and control algorithms for the vehicle. The settings are available in dedicated *virtual node* named as `<node>.shiva`.
 

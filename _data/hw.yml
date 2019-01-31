@@ -7,7 +7,7 @@ docs:
   - nodes/gps
   - nodes/servo
   - nodes/ghanta
-  - nodes/xhawk
   - nodes/ers
   - nodes/jsw
+  - nodes/xhawk
 title: Hardware

@@ -4,7 +4,7 @@ title: GPS Receiver
 ---
 
 >Configuration: `GPS`
-> | Nodes: [`gps`](../../hw/nodes/gps.md) [`xhawk`](../../hw/nodes/xhawk.md)
+> | Nodes: [`xhawk`](../../hw/nodes/xhawk.md) [`gps`](../../hw/nodes/gps.md)
 
 This feature provides [U-Blox](http://ublox.com) GNSS module management. The driver provides data for autopilot's AHRS system, reports some statistics (used/visible satellites), and synchronizes the time with *GPS Time*.
 

@@ -4,9 +4,9 @@ title: Downlink
 ---
 
 >Configuration: `Downlink`
-> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`jsw`](../../hw/nodes/jsw.md) [`xhawk`](../../hw/nodes/xhawk.md) [`ghanta`](../../hw/nodes/ghanta.md)
+> | Nodes: [`mhx`](../../hw/nodes/mhx.md) [`ghanta`](../../hw/nodes/ghanta.md) [`jsw`](../../hw/nodes/jsw.md) [`xhawk`](../../hw/nodes/xhawk.md)
 
-This is higher-level communication protocol, used to operate multiple vehicles with one or many ground control units. It is usually used on [mhx](../nodes/mhx.md) nodes, and works together with [Radio module](radio.md) and [ATS](ats.md)
+This is higher-level communication protocol, used to operate multiple vehicles with one or many ground control units. It is usually used on [mhx](../../hw/nodes/mhx.md) nodes, and works together with [Radio module](radio.md) and [ATS](ats.md)
 
 The protocol is connected to available WAN interface (radio, USB) and wraps all telemetry and uplink data to address the vehicles this data belongs to.
 
@@ -20,7 +20,7 @@ The XPDR data structure can be found in SDK file `node.h` and contains  the foll
 - *alt* - vehicle current MSL altitude [m]
 - *gSpeed* - vehicle current ground speed
 - *crs* - vehicle current course heading [deg]
-- *mode* - vehicle current flight mode, mandala value of `*mode*` variable
+- *mode* - vehicle current flight mode, mandala value of `mode` variable
 
 The GCU may change the *SQUAWK* dynamically, if it detects inconsistency (same numbers on other vehicles). This procedure is automatic and reported in the console.
 

@@ -5,7 +5,7 @@ description: >
   APX Theme by UAVOS Inc.
 lang: en-US
 
-baseurl: "/apx-docs-theme" # the subpath of your site, e.g. /blog/
+#baseurl: "/apx-docs-theme" # the subpath of your site, e.g. /blog/
 url: https://uavos.github.io/apx-docs-theme # the base hostname & protocol for your site
 # git_address: https://github.com/uavos/apx-docs-theme
 
@@ -28,6 +28,18 @@ plugins:
 relative_links:
   enabled:     true
   collections: true
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
 
 jekyll_tidy:
   # exclude: ["index.html"]
